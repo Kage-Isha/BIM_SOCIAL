@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+
+{% block title %}Discovery - BIM Social{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8 mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2><i class="fas fa-compass me-2"></i>Discovery</h2>
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" name="filter" id="trending" autocomplete="off" {% if request.GET.filter == 'trending' or not request.GET.filter %}checked{% endif %}>
+                    <label class="btn btn-outline-primary" for="trending">Trending</label>
+                    
+                    <input type="radio" class="btn-check" name="filter" id="recent" autocomplete="off" {% if request.GET.filter == 'recent' %}checked{% endif %}>
+                    <label class="btn btn-outline-primary" for="recent">Recent</label>
+                    
+                    <input type="radio" class="btn-check" name="filter" id="popular" autocomplete="off" {% if request.GET.filter == 'popular' %}checked{% endif %}>
+                    <label class="btn btn-outline-primary" for="popular">Popular</label>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Search posts, users, or topics..." id="searchInput" value="{{ request.GET.search|default:'' }}">
+                        <button class="btn btn-primary" type="button" onclick="searchContent()">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts Grid -->
+            <div id="postsContainer">
+                {% for post in posts %}
+                    {% include 'social/post_card.html' %}
+                {% empty %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-compass fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">No posts to discover yet</h4>
+                        <p class="text-muted">Be the first to share something amazing!</p>
+                        <a href="{% url 'feed' %}" class="btn btn-primary">
+                            <i class="fas fa-plus me-2"></i>Create Post
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Load More Button -->
+            {% if posts.has_next %}
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-primary" onclick="loadMorePosts()">
+                    <i class="fas fa-spinner fa-spin me-2 d-none" id="loadMoreSpinner"></i>
+                    Load More
+                </button>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 d-none d-lg-block">
+            <div class="sticky-top" style="top: 20px;">
+                <!-- Trending Topics -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6 class="mb-0"><i class="fas fa-fire me-2"></i>Trending Topics</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary">#BIM</span>
+                            <span class="badge bg-secondary">#Architecture</span>
+                            <span class="badge bg-success">#Construction</span>
+                            <span class="badge bg-info">#Engineering</span>
+                            <span class="badge bg-warning">#Design</span>
+                            <span class="badge bg-danger">#Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggested Users -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0"><i class="fas fa-users me-2"></i>Suggested Users</h6>
+                    </div>
+                    <div class="card-body" id="suggested-users-explore">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Post Modal (Global) -->
+<div class="modal fade" id="createPostModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create New Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="quickCreatePostForm" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <textarea class="form-control" name="caption" placeholder="What's on your mind?" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="quickMediaInput" class="form-label">Add Media (Optional)</label>
+                        <input type="file" class="form-control" id="quickMediaInput" name="image" accept="image/*,video/*">
+                    </div>
+                    <div id="quickMediaPreview" class="d-none">
+                        <img id="quickImagePreview" class="img-fluid rounded" style="max-height: 200px;">
+                        <video id="quickVideoPreview" class="img-fluid rounded" style="max-height: 200px;" controls></video>
+                        <button type="button" class="btn btn-sm btn-danger mt-2" onclick="removeQuickMedia()">
+                            <i class="fas fa-times"></i> Remove
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="quickCreateBtn">
+                        <i class="fas fa-paper-plane me-2"></i>Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    let currentPage = 1;
+    let currentFilter = 'trending';
+
+    // Filter change handler
+    document.querySelectorAll('input[name="filter"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            currentFilter = this.id;
+            currentPage = 1;
+            loadPosts();
+        });
+    });
+
+    // Load posts based on filter
+    function loadPosts() {
+        // Reload the page with the selected filter
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('filter', currentFilter);
+        urlParams.delete('search'); // Clear search when changing filter
+        window.location.href = window.location.pathname + '?' + urlParams.toString();
+    }
+
+    // Search functionality
+    function searchContent() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (!query) return;
+        
+        // Redirect to explore page with search parameter
+        const urlParams = new URLSearchParams();
+        urlParams.set('search', query);
+        window.location.href = window.location.pathname + '?' + urlParams.toString();
+    }
+    
+    // Handle Enter key in search input
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchContent();
+        }
+    });
+
+    // Quick post creation
+    document.getElementById('quickCreatePostForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const submitBtn = document.getElementById('quickCreateBtn');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Posting...';
+        
+        fetch('/ajax/create-post/', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                bootstrap.Modal.getInstance(document.getElementById('createPostModal')).hide();
+                this.reset();
+                document.getElementById('quickMediaPreview').classList.add('d-none');
+                
+                // Show success message
+                const alert = document.createElement('div');
+                alert.className = 'alert alert-success alert-dismissible fade show';
+                alert.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i>Post created successfully!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.querySelector('.container-fluid').prepend(alert);
+                
+                // Reload posts
+                loadPosts();
+            } else {
+                alert('Error: ' + (data.error || 'Failed to create post'));
+            }
+        })
+        .catch(error => {
+            alert('Error creating post. Please try again.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        });
+    });
+
+    // Media preview for quick post
+    document.getElementById('quickMediaInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const preview = document.getElementById('quickMediaPreview');
+        const imagePreview = document.getElementById('quickImagePreview');
+        const videoPreview = document.getElementById('quickVideoPreview');
+        
+        if (file.type.startsWith('image/')) {
+            imagePreview.src = URL.createObjectURL(file);
+            imagePreview.style.display = 'block';
+            videoPreview.style.display = 'none';
+        } else if (file.type.startsWith('video/')) {
+            videoPreview.src = URL.createObjectURL(file);
+            videoPreview.style.display = 'block';
+            imagePreview.style.display = 'none';
+        }
+        
+        preview.classList.remove('d-none');
+    });
+
+    function removeQuickMedia() {
+        document.getElementById('quickMediaInput').value = '';
+        document.getElementById('quickMediaPreview').classList.add('d-none');
+    }
+
+    // Load suggested users - simplified for now
+    function loadSuggestedUsers() {
+        const container = document.getElementById('suggested-users-explore');
+        container.innerHTML = `
+            <div class="text-center text-muted small">
+                <i class="fas fa-users mb-2"></i>
+                <p>Suggested users will appear here</p>
+            </div>
+        `;
+    }
+
+
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+        loadSuggestedUsers();
+    });
+</script>
+{% endblock %}

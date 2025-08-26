@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}Conversation - BIM Social{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <a href="{% url 'messages' %}" class="btn btn-outline-secondary btn-sm me-3">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                    <div class="flex-grow-1">
+                        <h5 class="mb-0">
+                            {% for participant in conversation.participants.all %}
+                                {% if participant != user %}
+                                    <i class="fas fa-comment me-2"></i>{{ participant.get_full_name|default:participant.username }}
+                                {% endif %}
+                            {% endfor %}
+                        </h5>
+                    </div>
+                </div>
+                <div class="card-body" style="height: 400px; overflow-y: auto;" id="messages-container">
+                    {% if conversation.messages.all %}
+                        {% for message in conversation.messages.all %}
+                            <div class="mb-3 {% if message.sender == user %}text-end{% endif %}">
+                                <div class="d-inline-block p-2 rounded {% if message.sender == user %}bg-primary text-white{% else %}bg-light{% endif %}" style="max-width: 70%;">
+                                    {{ message.content }}
+                                </div>
+                                <div class="small text-muted mt-1">
+                                    {% if message.sender != user %}{{ message.sender.username }} • {% endif %}
+                                    {{ message.created_at|timesince }} ago
+                                    {% if message.sender == user %}
+                                        <span class="message-status ms-1" data-message-id="{{ message.id }}">
+                                            {% if message.read_by.count > 1 %}
+                                                <i class="fas fa-check-double text-primary" title="Seen"></i>
+                                            {% else %}
+                                                <i class="fas fa-check text-muted" title="Delivered"></i>
+                                            {% endif %}
+                                        </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center text-muted py-5">
+                            <i class="fas fa-comment fa-2x mb-3"></i>
+                            <p>No messages yet. Start the conversation!</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <form method="post" action="{% url 'send_message' conversation.id %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" name="content" class="form-control" placeholder="Type your message..." required maxlength="1000">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Auto-refresh messages every 2 seconds for real-time feel
+let lastMessageCount = 0;
+let hasNewMessages = false;
+
+setInterval(function() {
+    const messagesContainer = document.getElementById('messages-container');
+    const scrollPosition = messagesContainer.scrollTop;
+    const scrollHeight = messagesContainer.scrollHeight;
+    const isScrolledToBottom = scrollPosition + messagesContainer.clientHeight >= scrollHeight - 10;
+    
+    fetch(window.location.href + '?ajax=1')
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const newMessages = doc.getElementById('messages-container').innerHTML;
+            
+            // Count current messages
+            const currentMessageCount = messagesContainer.querySelectorAll('.mb-3').length;
+            const newMessageCount = doc.getElementById('messages-container').querySelectorAll('.mb-3').length;
+            
+            if (messagesContainer.innerHTML !== newMessages) {
+                messagesContainer.innerHTML = newMessages;
+                
+                // Check if there are new messages
+                if (newMessageCount > lastMessageCount && lastMessageCount > 0) {
+                    hasNewMessages = true;
+                    
+                    // Show notification for new message
+                    showMessageNotification();
+                    
+                    // Play notification sound (optional)
+                    playNotificationSound();
+                }
+                
+                lastMessageCount = newMessageCount;
+                
+                // Auto-scroll to bottom if user was already at bottom or there are new messages
+                if (isScrolledToBottom || hasNewMessages) {
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                    hasNewMessages = false;
+                }
+            }
+        })
+        .catch(error => console.log('Auto-refresh error:', error));
+}, 2000);
+
+// Show visual notification for new messages
+function showMessageNotification() {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'alert alert-info alert-dismissible fade show position-fixed';
+    notification.style.cssText = 'top: 20px; right: 20px; z-index: 1050; min-width: 300px;';
+    notification.innerHTML = `
+        <i class="fas fa-comment me-2"></i>New message received
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 3 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 3000);
+}
+
+// Play notification sound
+function playNotificationSound() {
+    try {
+        const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmYdBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU8k9n1unEiBC13yO/eizEIHWq+8+OWT');
+        audio.volume = 0.3;
+        audio.play().catch(() => {}); // Ignore errors if audio fails
+    } catch (e) {
+        // Ignore audio errors
+    }
+}
+
+// Scroll to bottom on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const messagesContainer = document.getElementById('messages-container');
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+});
+</script>
+{% endblock %}

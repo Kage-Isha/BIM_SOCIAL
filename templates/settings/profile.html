@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %}Settings - BIM Social{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-cog me-2"></i>Profile Settings
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="first_name" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" 
+                                       value="{{ user.first_name }}" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="last_name" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" 
+                                       value="{{ user.last_name }}" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" 
+                                   value="{{ user.email }}" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea class="form-control" id="bio" name="bio" rows="3" 
+                                      placeholder="Tell us about yourself...">{{ user.profile.bio }}</textarea>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="location" class="form-label">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" 
+                                       value="{{ user.profile.location }}" placeholder="City, Country">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="university" class="form-label">University</label>
+                                <input type="text" class="form-control" id="university" name="university" 
+                                       value="{{ user.profile.university }}" placeholder="Your university">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="specialization" class="form-label">Specialization</label>
+                                <select class="form-select" id="specialization" name="specialization">
+                                    <option value="">Select specialization</option>
+                                    <option value="software_development" {% if user.profile.specialization == 'software_development' %}selected{% endif %}>Software Development</option>
+                                    <option value="data_science" {% if user.profile.specialization == 'data_science' %}selected{% endif %}>Data Science</option>
+                                    <option value="cybersecurity" {% if user.profile.specialization == 'cybersecurity' %}selected{% endif %}>Cybersecurity</option>
+                                    <option value="network_administration" {% if user.profile.specialization == 'network_administration' %}selected{% endif %}>Network Administration</option>
+                                    <option value="database_management" {% if user.profile.specialization == 'database_management' %}selected{% endif %}>Database Management</option>
+                                    <option value="web_development" {% if user.profile.specialization == 'web_development' %}selected{% endif %}>Web Development</option>
+                                    <option value="mobile_development" {% if user.profile.specialization == 'mobile_development' %}selected{% endif %}>Mobile Development</option>
+                                    <option value="other" {% if user.profile.specialization == 'other' %}selected{% endif %}>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="experience_level" class="form-label">Experience Level</label>
+                                <select class="form-select" id="experience_level" name="experience_level">
+                                    <option value="">Select experience level</option>
+                                    <option value="beginner" {% if user.profile.experience_level == 'beginner' %}selected{% endif %}>Beginner</option>
+                                    <option value="intermediate" {% if user.profile.experience_level == 'intermediate' %}selected{% endif %}>Intermediate</option>
+                                    <option value="advanced" {% if user.profile.experience_level == 'advanced' %}selected{% endif %}>Advanced</option>
+                                    <option value="expert" {% if user.profile.experience_level == 'expert' %}selected{% endif %}>Expert</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="profile_image" class="form-label">Profile Image</label>
+                            <input type="file" class="form-control" id="profile_image" name="profile_image" 
+                                   accept="image/*">
+                            {% if user.profile.profile_image %}
+                                <div class="mt-2">
+                                    <img src="{{ user.profile.profile_image.url }}" alt="Current profile image" 
+                                         class="rounded-circle" width="50" height="50">
+                                    <small class="text-muted ms-2">Current profile image</small>
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Messages - BIM Social{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-envelope me-2"></i>Messages
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if conversations %}
+                        <div class="list-group">
+                            {% for conversation in conversations %}
+                                <div class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">
+                                                {% for participant in conversation.participants.all %}
+                                                    {% if participant != user %}
+                                                        {{ participant.get_full_name|default:participant.username }}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </h6>
+                                            {% if conversation.messages.last %}
+                                                <p class="mb-1 text-muted">{{ conversation.messages.last.content|truncatechars:50 }}</p>
+                                                <small class="text-muted">{{ conversation.messages.last.created_at|timesince }} ago</small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center py-5">
+                            <i class="fas fa-envelope fa-3x text-muted mb-3"></i>
+                            <h5 class="text-muted">No messages yet</h5>
+                            <p class="text-muted">Start a conversation with someone!</p>
+                        </div>
+                    {% endif %}
+                    
+                    <!-- Mutual Followers Section -->
+                    {% if mutual_followers %}
+                        <div class="mt-4">
+                            <h6 class="mb-3">Start a conversation with:</h6>
+                            <div class="list-group">
+                                {% for follower in mutual_followers %}
+                                    <div class="list-group-item d-flex align-items-center">
+                                        <div class="me-3">
+                                            {% if follower.profile.profile_image %}
+                                                <img src="{{ follower.profile.profile_image.url }}" alt="{{ follower.username }}" class="rounded-circle" style="width: 40px; height: 40px;">
+                                            {% else %}
+                                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white" style="width: 40px; height: 40px;">
+                                                    {{ follower.username|first|upper }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0">{{ follower.get_full_name|default:follower.username }}</h6>
+                                            <small class="text-muted">@{{ follower.username }}</small>
+                                        </div>
+                                        <form method="post" action="{% url 'start_conversation' follower.username %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                Message
+                            </button>
+                        </form>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

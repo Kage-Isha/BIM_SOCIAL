@@ -1,0 +1,186 @@
+<!-- Post Card Template -->
+<div class="card post-card mb-4">
+    <!-- Post Header -->
+    <div class="card-body pb-0">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="d-flex align-items-center">
+                <a href="{% url 'profile' post.user.username %}" class="text-decoration-none">
+                    {% if post.user.profile.profile_image %}
+                        <img src="{{ post.user.profile.profile_image.url }}" alt="{{ post.user.username }}" class="avatar me-3">
+                    {% else %}
+                        <div class="avatar me-3 bg-primary d-flex align-items-center justify-content-center text-white">
+                            {{ post.user.username|first|upper }}
+                        </div>
+                    {% endif %}
+                </a>
+                <div>
+                    <a href="{% url 'profile' post.user.username %}" class="text-decoration-none text-dark">
+                        <div class="fw-medium">{{ post.user.get_full_name|default:post.user.username }}</div>
+                    </a>
+                    <div class="text-muted small">
+                        {{ post.user.profile.specialization|default:"BIM Professional" }} • 
+                        <span title="{{ post.created_at }}">{{ post.created_at|timesince }} ago</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                {% if post.user != user %}
+                    <form method="post" action="{% url 'toggle_follow' post.user.username %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-sm {% if post.is_following_author %}btn-secondary{% else %}btn-primary{% endif %} me-2">
+                            {% if post.is_following_author %}Following{% else %}Follow{% endif %}
+                        </button>
+                    </form>
+                {% endif %}
+                
+                <div class="dropdown">
+                    <button class="btn btn-light btn-sm" data-bs-toggle="dropdown">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        {% if post.user == user %}
+                            <li><a class="dropdown-item" href="{% url 'edit_post' post.id %}">
+                                <i class="fas fa-edit me-2"></i>Edit
+                            </a></li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="deletePost('{{ post.id }}')">
+                                <i class="fas fa-trash me-2"></i>Delete
+                            </a></li>
+                        {% else %}
+                            <li><a class="dropdown-item" href="#" onclick="reportPost('{{ post.id }}')">
+                                <i class="fas fa-flag me-2"></i>Report
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="hidePost('{{ post.id }}')">
+                                <i class="fas fa-eye-slash me-2"></i>Hide
+                            </a></li>
+                        {% endif %}
+                        <li><a class="dropdown-item" href="{% url 'post_detail' post.id %}">
+                            <i class="fas fa-external-link-alt me-2"></i>View Post
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Post Caption -->
+        {% if post.caption %}
+            <div class="mb-3">
+                <p class="mb-0">{{ post.caption|linebreaks }}</p>
+            </div>
+        {% endif %}
+    </div>
+    
+    <!-- Post Media -->
+    {% if post.image or post.video %}
+        <div class="position-relative">
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="Post image" class="post-media">
+            {% elif post.video %}
+                <video controls class="post-media">
+                    <source src="{{ post.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% endif %}
+        </div>
+    {% endif %}
+    
+    <!-- Post Actions -->
+    <div class="card-body pt-3">
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="d-flex align-items-center">
+                <form method="post" action="{% url 'toggle_like' post_id=post.id %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-light btn-sm me-3">
+                        <i class="{% if post.is_liked %}fas text-danger{% else %}far{% endif %} fa-heart me-1"></i>
+                        <span class="like-count">{{ post.likes_count }}</span>
+                    </button>
+                </form>
+                
+                <a href="{% url 'post_detail' post.id %}" class="btn btn-light btn-sm me-3">
+                    <i class="far fa-comment me-1"></i>
+                    {{ post.comments_count }}
+                </a>
+                
+                <button class="btn btn-light btn-sm me-3" disabled>
+                    <i class="fas fa-share me-1"></i>
+                    {{ post.shares_count|default:0 }}
+                </button>
+            </div>
+            
+            <form method="post" action="{% url 'toggle_save' post.id %}" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-light btn-sm">
+                    <i class="{% if post.is_saved %}fas text-warning{% else %}far{% endif %} fa-bookmark"></i>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Engagement Summary -->
+        {% if post.likes_count > 0 or post.comments_count > 0 %}
+            <div class="text-muted small mb-2">
+                {% if post.likes_count > 0 %}
+                    <span class="me-3">{{ post.likes_count }} like{{ post.likes_count|pluralize }}</span>
+                {% endif %}
+                {% if post.comments_count > 0 %}
+                    <a href="{% url 'post_detail' post.id %}" class="text-muted text-decoration-none">
+                        {{ post.comments_count }} comment{{ post.comments_count|pluralize }}
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+        
+        <!-- Recent Comments Preview -->
+        {% if post.recent_comments %}
+            <div class="mt-2">
+                {% for comment in post.recent_comments %}
+                    <div class="d-flex align-items-start mb-2">
+                        <a href="{% url 'profile' comment.user.username %}">
+                            {% if comment.user.profile.profile_image %}
+                                <img src="{{ comment.user.profile.profile_image.url }}" alt="{{ comment.user.username }}" class="avatar avatar-sm me-2" style="width: 24px; height: 24px;">
+                            {% else %}
+                                <div class="avatar avatar-sm me-2 bg-secondary d-flex align-items-center justify-content-center text-white" style="width: 24px; height: 24px; font-size: 10px;">
+                                    {{ comment.user.username|first|upper }}
+                                </div>
+                            {% endif %}
+                        </a>
+                        <div class="flex-grow-1">
+                            <span class="fw-medium small">{{ comment.user.username }}</span>
+                            <span class="small">{{ comment.content }}</span>
+                            <div class="text-muted small">{{ comment.created_at|timesince }} ago</div>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                {% if post.comments_count > 2 %}
+                    <a href="{% url 'post_detail' post.id %}" class="text-muted small text-decoration-none">
+                        View all {{ post.comments_count }} comments
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+        
+        <!-- Add Comment -->
+        <div class="d-flex align-items-center mt-3 pt-3 border-top">
+            {% if user.profile.profile_image %}
+                <img src="{{ user.profile.profile_image.url }}" alt="{{ user.username }}" class="avatar avatar-sm me-2" style="width: 32px; height: 32px;">
+            {% else %}
+                <div class="avatar avatar-sm me-2 bg-primary d-flex align-items-center justify-content-center text-white" style="width: 32px; height: 32px; font-size: 12px;">
+                    {{ user.username|first|upper }}
+                </div>
+            {% endif %}
+            <div class="flex-grow-1">
+                <form method="post" action="{% url 'add_comment' post.id %}" class="d-flex">
+                    {% csrf_token %}
+                    <input type="text" class="form-control form-control-sm border-0 bg-light" 
+                           placeholder="Add a comment..." name="content" required>
+                    <button type="submit" class="btn btn-sm btn-primary ms-2">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- All JavaScript removed - using pure Django forms -->

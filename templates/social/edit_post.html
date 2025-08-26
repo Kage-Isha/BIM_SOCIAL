@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Post - BIM Social{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Edit Post</h5>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="card-body">
+                        <!-- User Info -->
+                        <div class="d-flex align-items-start mb-3">
+                            {% if user.profile.profile_image %}
+                                <img src="{{ user.profile.profile_image.url }}" alt="{{ user.username }}" class="avatar me-3">
+                            {% else %}
+                                <div class="avatar me-3 bg-primary d-flex align-items-center justify-content-center text-white">
+                                    {{ user.username|first|upper }}
+                                </div>
+                            {% endif %}
+                            <div>
+                                <div class="fw-medium">{{ user.get_full_name|default:user.username }}</div>
+                                <div class="text-muted small">{{ user.profile.specialization|default:"BIM Professional" }}</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Caption -->
+                        <div class="mb-3">
+                            <label for="caption" class="form-label">Caption</label>
+                            <textarea class="form-control" id="caption" name="caption" rows="4" 
+                                      placeholder="What's on your mind?">{{ post.caption }}</textarea>
+                        </div>
+                        
+                        <!-- Current Media -->
+                        {% if post.image or post.video %}
+                            <div class="mb-3">
+                                <label class="form-label">Current Media</label>
+                                <div class="position-relative">
+                                    {% if post.image %}
+                                        <img src="{{ post.image.url }}" alt="Current post image" class="img-fluid rounded" style="max-height: 400px;">
+                                        <div class="mt-2 text-muted small">Current image</div>
+                                    {% elif post.video %}
+                                        <video controls class="img-fluid rounded" style="max-height: 400px;">
+                                            <source src="{{ post.video.url }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <div class="mt-2 text-muted small">Current video</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        
+                        <!-- New Media Upload -->
+                        <div class="mb-3">
+                            <label for="mediaInput" class="form-label">Replace Media (optional)</label>
+                            <input type="file" class="form-control" id="mediaInput" name="image" accept="image/*,video/*">
+                            <div class="form-text">Upload a new image or video to replace the current media. Leave empty to keep current media.</div>
+                        </div>
+                        
+                        <!-- Media Preview -->
+                        <div id="mediaPreview" class="mb-3 d-none">
+                            <label class="form-label">New Media Preview</label>
+                            <div class="position-relative">
+                                <img id="imagePreview" class="img-fluid rounded d-none" style="max-height: 400px;">
+                                <video id="videoPreview" class="img-fluid rounded d-none" controls style="max-height: 400px;"></video>
+                                <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2" 
+                                        onclick="removeNewMedia()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'post_detail' post.id %}" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Update Post
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Handle media upload preview
+    document.getElementById('mediaInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) {
+            document.getElementById('mediaPreview').classList.add('d-none');
+            return;
+        }
+        
+        const preview = document.getElementById('mediaPreview');
+        const imagePreview = document.getElementById('imagePreview');
+        const videoPreview = document.getElementById('videoPreview');
+        
+        // Reset previews
+        imagePreview.classList.add('d-none');
+        videoPreview.classList.add('d-none');
+        
+        if (file.type.startsWith('image/')) {
+            imagePreview.src = URL.createObjectURL(file);
+            imagePreview.classList.remove('d-none');
+        } else if (file.type.startsWith('video/')) {
+            videoPreview.src = URL.createObjectURL(file);
+            videoPreview.classList.remove('d-none');
+        }
+        
+        preview.classList.remove('d-none');
+    });
+    
+    function removeNewMedia() {
+        document.getElementById('mediaInput').value = '';
+        document.getElementById('mediaPreview').classList.add('d-none');
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,243 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ profile_user.username }} - BIM Social{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- Profile Header -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            {% if profile.profile_image %}
+                                <img src="{{ profile.profile_image.url }}" alt="{{ profile_user.username }}" class="avatar avatar-lg">
+                            {% else %}
+                                <div class="avatar avatar-lg bg-primary d-flex align-items-center justify-content-center text-white fs-2">
+                                    {{ profile_user.username|first|upper }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h3 class="mb-1">{{ profile_user.username }}</h3>
+                                    {% if profile_user.first_name or profile_user.last_name %}
+                                        <p class="text-muted mb-2">{{ profile_user.first_name }} {{ profile_user.last_name }}</p>
+                                    {% endif %}
+                                    {% if profile.bio %}
+                                        <p class="mb-2">{{ profile.bio }}</p>
+                                    {% endif %}
+                                    <div class="d-flex gap-3 mb-2">
+                                        <span><strong>{{ posts.paginator.count }}</strong> posts</span>
+                                        <span><strong>{{ followers_count }}</strong> followers</span>
+                                        <span><strong>{{ following_count }}</strong> following</span>
+                                    </div>
+                                    {% if profile.location %}
+                                        <p class="text-muted mb-1">
+                                            <i class="fas fa-map-marker-alt me-1"></i>{{ profile.location }}
+                                            {% if profile.location_verified %}
+                                                <i class="fas fa-check-circle text-success ms-1" title="Verified Location"></i>
+                                            {% endif %}
+                                        </p>
+                                    {% endif %}
+                                    {% if profile.university %}
+                                        <p class="text-muted mb-1">
+                                            <i class="fas fa-graduation-cap me-1"></i>{{ profile.university }}
+                                        </p>
+                                    {% endif %}
+                                    {% if profile.specialization %}
+                                        <p class="text-muted mb-1">
+                                            <i class="fas fa-tools me-1"></i>{{ profile.get_specialization_display }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if is_own_profile %}
+                                        <a href="{% url 'settings' %}" class="btn btn-outline-primary">
+                                            <i class="fas fa-edit me-2"></i>Edit Profile
+                                        </a>
+                                    {% else %}
+                                        <form method="post" action="{% url 'toggle_follow' profile_user.username %}" class="d-inline">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn {% if is_following %}btn-secondary{% else %}btn-primary{% endif %}">
+                                                {% if is_following %}
+                                                    <i class="fas fa-user-check me-2"></i>Following
+                                                {% else %}
+                                                    <i class="fas fa-user-plus me-2"></i>Follow
+                                                {% endif %}
+                                            </button>
+                                        </form>
+                                        <button class="btn btn-outline-secondary ms-2">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5><i class="fas fa-th me-2"></i>Posts</h5>
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" name="view" id="grid" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="grid">
+                        <i class="fas fa-th"></i>
+                    </label>
+                    <input type="radio" class="btn-check" name="view" id="list" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="list">
+                        <i class="fas fa-list"></i>
+                    </label>
+                </div>
+            </div>
+
+            <div id="postsContainer">
+                {% if posts %}
+                    <!-- Grid View -->
+                    <div id="gridView" class="row">
+                        {% for post in posts %}
+                            <div class="col-md-4 mb-4">
+                                <div class="card post-preview" onclick="viewPost('{{ post.id }}')">
+                                    {% if post.image %}
+                                        <img src="{{ post.image.url }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                                    {% elif post.video %}
+                                        <video class="card-img-top" style="height: 200px; object-fit: cover;">
+                                            <source src="{{ post.video.url }}" type="video/mp4">
+                                        </video>
+                                    {% else %}
+                                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                            <i class="fas fa-quote-left fa-2x text-muted"></i>
+                                        </div>
+                                    {% endif %}
+                                    <div class="card-img-overlay d-flex align-items-end">
+                                        <div class="d-flex gap-2 text-white">
+                                            <span><i class="fas fa-heart"></i> {{ post.likes_count }}</span>
+                                            <span><i class="fas fa-comment"></i> {{ post.comments_count }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- List View -->
+                    <div id="listView" class="d-none">
+                        {% for post in posts %}
+                            {% include 'social/post_card.html' %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Pagination -->
+                    {% if posts.has_other_pages %}
+                        <nav aria-label="Posts pagination">
+                            <ul class="pagination justify-content-center">
+                                {% if posts.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a>
+                                    </li>
+                                {% endif %}
+                                
+                                {% for num in posts.paginator.page_range %}
+                                    {% if posts.number == num %}
+                                        <li class="page-item active">
+                                            <span class="page-link">{{ num }}</span>
+                                        </li>
+                                    {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                {% if posts.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ posts.next_page_number }}">Next</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endif %}
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-camera fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">No posts yet</h4>
+                        {% if is_own_profile %}
+                            <p class="text-muted">Share your first post to get started!</p>
+                            <a href="{% url 'feed' %}" class="btn btn-primary">
+                                <i class="fas fa-plus me-2"></i>Create Post
+                            </a>
+                        {% else %}
+                            <p class="text-muted">{{ profile_user.username }} hasn't shared anything yet.</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Detail Modal -->
+<div class="modal fade" id="postDetailModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Post Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="postDetailContent">
+                <!-- Post content will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // View toggle
+    document.querySelectorAll('input[name="view"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const gridView = document.getElementById('gridView');
+            const listView = document.getElementById('listView');
+            
+            if (this.id === 'grid') {
+                gridView.classList.remove('d-none');
+                listView.classList.add('d-none');
+            } else {
+                gridView.classList.add('d-none');
+                listView.classList.remove('d-none');
+            }
+        });
+    });
+
+
+    // View post in modal
+    function viewPost(postId) {
+        const modal = new bootstrap.Modal(document.getElementById('postDetailModal'));
+        const content = document.getElementById('postDetailContent');
+        
+        content.innerHTML = '<div class="text-center py-4"><i class="fas fa-spinner fa-spin fa-2x"></i></div>';
+        modal.show();
+        
+        fetch(`/post/${postId}/`)
+            .then(response => response.text())
+            .then(html => {
+                content.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error loading post:', error);
+                content.innerHTML = `
+                    <div class="text-center py-4">
+                        <i class="fas fa-exclamation-triangle fa-2x text-warning mb-3"></i>
+                        <p>Error loading post. Please try again.</p>
+                    </div>
+                `;
+            });
+    }
+
+</script>
+{% endblock %}

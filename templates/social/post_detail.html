@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% block title %}Post - BIM Social{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- Post Detail -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <img src="{% if post.user.profile.profile_image %}{{ post.user.profile.profile_image.url }}{% else %}https://via.placeholder.com/40{% endif %}" 
+                             alt="Profile" class="rounded-circle me-3" width="40" height="40">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-0">
+                                <a href="{% url 'profile' post.user.username %}" class="text-decoration-none">
+                                    {{ post.user.get_full_name|default:post.user.username }}
+                                </a>
+                            </h6>
+                            <small class="text-muted">@{{ post.user.username }} • {{ post.created_at|timesince }} ago</small>
+                        </div>
+                        {% if post.user == user %}
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'edit_post' post.id %}">
+                                        <i class="fas fa-edit me-2"></i>Edit
+                                    </a></li>
+                                    <li><a class="dropdown-item text-danger" href="#" onclick="deletePost('{{ post.id }}')">
+                                        <i class="fas fa-trash me-2"></i>Delete
+                                    </a></li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    {% if post.caption %}
+                        <p class="card-text">{{ post.caption|linebreaks }}</p>
+                    {% endif %}
+                    
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="Post image" class="img-fluid rounded mb-3">
+                    {% endif %}
+                    
+                    {% if post.video %}
+                        <video controls class="w-100 rounded mb-3">
+                            <source src="{{ post.video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    {% endif %}
+                </div>
+                
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group" role="group">
+                            <form method="post" action="{% url 'toggle_like' post_id=post.id %}" style="display: inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-heart{% if not post.is_liked %}-o{% endif %} me-1"></i>
+                                    <span class="like-count">{{ post.likes_count }}</span>
+                                </button>
+                            </form>
+                            <button type="button" class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-comment me-1"></i>{{ post.comments_count }}
+                            </button>
+                            <button type="button" class="btn btn-outline-info btn-sm save-btn" 
+                                    data-post-id="{{ post.id }}" data-saved="{{ post.is_saved|yesno:'true,false' }}">
+                                <i class="fas fa-bookmark{% if not post.is_saved %}-o{% endif %}"></i>
+                            </button>
+                        </div>
+                        <small class="text-muted">{{ post.created_at }}</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comments Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0">Comments ({{ post.comments_count }})</h6>
+                </div>
+                <div class="card-body">
+                    <!-- Add Comment Form -->
+                    <form class="mb-4" onsubmit="addComment(event, '{{ post.id }}')">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="content" 
+                                   placeholder="Write a comment..." required>
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Comments List -->
+                    <div id="comments-list">
+                        {% for comment in comments %}
+                            <div class="d-flex mb-3">
+                                <img src="{% if comment.user.profile.profile_image %}{{ comment.user.profile.profile_image.url }}{% else %}https://via.placeholder.com/32{% endif %}" 
+                                     alt="Profile" class="rounded-circle me-3" width="32" height="32">
+                                <div class="flex-grow-1">
+                                    <div class="bg-light rounded p-2">
+                                        <h6 class="mb-1">
+                                            <a href="{% url 'profile' comment.user.username %}" class="text-decoration-none">
+                                                {{ comment.user.get_full_name|default:comment.user.username }}
+                                            </a>
+                                        </h6>
+                                        <p class="mb-0">{{ comment.content }}</p>
+                                    </div>
+                                    <small class="text-muted">{{ comment.created_at|timesince }} ago</small>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="text-center text-muted py-4">
+                                <i class="fas fa-comments fa-2x mb-2"></i>
+                                <p>No comments yet. Be the first to comment!</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Pagination -->
+                    {% if comments.has_other_pages %}
+                        <nav aria-label="Comments pagination">
+                            <ul class="pagination justify-content-center">
+                                {% if comments.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ comments.previous_page_number }}">Previous</a>
+                                    </li>
+                                {% endif %}
+                                
+                                {% for num in comments.paginator.page_range %}
+                                    {% if comments.number == num %}
+                                        <li class="page-item active">
+                                            <span class="page-link">{{ num }}</span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                {% if comments.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ comments.next_page_number }}">Next</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Like functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const likeBtn = document.querySelector('.like-btn');
+    // Like button now uses Django forms - no JavaScript needed
+});
+
+// Add comment functionality
+function addComment(event, postId) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    fetch(`/ajax/comment/${postId}/`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Add new comment to the list
+            const commentsList = document.getElementById('comments-list');
+            const newComment = document.createElement('div');
+            newComment.className = 'd-flex mb-3';
+            newComment.innerHTML = `
+                <img src="${data.comment.user.profile_image_url || 'https://via.placeholder.com/32'}" 
+                     alt="Profile" class="rounded-circle me-3" width="32" height="32">
+                <div class="flex-grow-1">
+                    <div class="bg-light rounded p-2">
+                        <h6 class="mb-1">
+                            <a href="/profile/${data.comment.user.username}/" class="text-decoration-none">
+                                ${data.comment.user.username}
+                            </a>
+                        </h6>
+                        <p class="mb-0">${data.comment.content}</p>
+                    </div>
+                    <small class="text-muted">Just now</small>
+                </div>
+            `;
+            
+            if (commentsList.querySelector('.text-center')) {
+                // Replace "no comments" message
+                commentsList.innerHTML = '';
+            }
+            
+            commentsList.insertBefore(newComment, commentsList.firstChild);
+            
+            // Clear form
+            form.reset();
+            
+            // Update comment count
+            document.querySelector('.card-footer .btn-outline-secondary').innerHTML = 
+                `<i class="fas fa-comment me-1"></i>${data.comments_count}`;
+        }
+    });
+}
+</script>
+{% endblock %}
