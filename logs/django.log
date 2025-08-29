@@ -5203,3 +5203,556 @@ INFO 2025-08-26 10:44:30,310 server 22308 28164 HTTP/2 support not enabled (inst
 INFO 2025-08-26 10:44:30,311 server 22308 28164 Configuring endpoint tcp:port=8000:interface=127.0.0.1
 INFO 2025-08-26 10:44:30,312 server 22308 28164 Listening on TCP address 127.0.0.1:8000
 INFO 2025-08-26 10:44:54,890 runserver 22308 28164 [mHTTP GET /feed/ 200 [0.07, 127.0.0.1:64809][0m
+INFO 2025-08-26 12:11:39,785 autoreload 13316 27328 Watching for file changes with StatReloader
+INFO 2025-08-26 12:11:39,969 server 13316 1784 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:11:39,970 server 13316 1784 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:11:39,971 server 13316 1784 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 12:11:48,223 runserver 13316 1784 [mHTTP GET /profile/ramm/ 200 [0.09, 127.0.0.1:56184][0m
+INFO 2025-08-26 12:11:48,302 runserver 13316 1784 [36mHTTP GET /media/posts/images/Nitro_Wallpaper_03_3840x2400.jpg 304 [0.02, 127.0.0.1:49614][0m
+INFO 2025-08-26 12:11:48,308 runserver 13316 1784 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.04, 127.0.0.1:56184][0m
+INFO 2025-08-26 12:11:53,859 runserver 13316 1784 [mHTTP GET /profile/shyam/ 200 [0.04, 127.0.0.1:49622][0m
+INFO 2025-08-26 12:11:53,910 runserver 13316 1784 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.03, 127.0.0.1:49622][0m
+INFO 2025-08-26 12:11:56,454 runserver 13316 1784 [mHTTP GET /feed/ 200 [0.07, 127.0.0.1:49622][0m
+INFO 2025-08-26 12:11:56,537 runserver 13316 1784 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.06, 127.0.0.1:49622][0m
+INFO 2025-08-26 12:11:56,538 runserver 13316 1784 [36mHTTP GET /media/posts/images/Nitro_Wallpaper_03_3840x2400.jpg 304 [0.05, 127.0.0.1:49624][0m
+INFO 2025-08-26 12:12:01,991 runserver 13316 1784 [mHTTP GET /feed/ 200 [0.05, 127.0.0.1:56184][0m
+INFO 2025-08-26 12:12:02,047 runserver 13316 1784 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.01, 127.0.0.1:56184][0m
+INFO 2025-08-26 12:17:09,165 autoreload 13316 27328 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 12:17:10,659 autoreload 21420 19796 Watching for file changes with StatReloader
+INFO 2025-08-26 12:17:10,857 server 21420 34424 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:17:10,857 server 21420 34424 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:17:10,858 server 21420 34424 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 12:18:12,699 runserver 21420 34424 [mHTTP GET /feed/ 200 [0.11, 127.0.0.1:64261][0m
+INFO 2025-08-26 12:18:13,840 runserver 21420 34424 [mHTTP GET /feed/ 200 [0.04, 127.0.0.1:64261][0m
+INFO 2025-08-26 12:18:14,321 runserver 21420 34424 [mHTTP GET /feed/ 200 [0.03, 127.0.0.1:64261][0m
+INFO 2025-08-26 12:18:19,107 runserver 21420 34424 [mHTTP GET /feed/ 200 [0.05, 127.0.0.1:61859][0m
+INFO 2025-08-26 12:23:44,484 autoreload 21420 19796 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 12:23:46,090 autoreload 5316 26620 Watching for file changes with StatReloader
+INFO 2025-08-26 12:23:46,313 server 5316 26988 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:23:46,313 server 5316 26988 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:23:46,315 server 5316 26988 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 12:24:44,466 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.19, 127.0.0.1:58924][0m
+INFO 2025-08-26 12:24:46,750 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.18, 127.0.0.1:58924][0m
+INFO 2025-08-26 12:26:09,701 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.03, 127.0.0.1:52292][0m
+INFO 2025-08-26 12:26:15,330 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.05, 127.0.0.1:50796][0m
+ERROR 2025-08-26 12:26:19,284 web_views 5316 3632 Error in toggle_like_view: name 'models' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 524, in toggle_like_view
+    likes_count=models.F('likes_count') + 1
+                ^^^^^^
+NameError: name 'models' is not defined
+INFO 2025-08-26 12:26:19,296 runserver 5316 26988 [32mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 302 [0.04, 127.0.0.1:50796][0m
+INFO 2025-08-26 12:26:19,347 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.04, 127.0.0.1:50796][0m
+ERROR 2025-08-26 12:26:29,176 web_views 5316 10828 Error in toggle_like_view: name 'models' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 524, in toggle_like_view
+    likes_count=models.F('likes_count') + 1
+                ^^^^^^
+NameError: name 'models' is not defined
+INFO 2025-08-26 12:26:29,182 runserver 5316 26988 [32mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 302 [0.04, 127.0.0.1:50796][0m
+INFO 2025-08-26 12:26:29,233 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.04, 127.0.0.1:50796][0m
+INFO 2025-08-26 12:28:40,051 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.03, 127.0.0.1:54189][0m
+ERROR 2025-08-26 12:28:42,421 web_views 5316 31836 Error in toggle_like_view: name 'models' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 524, in toggle_like_view
+    likes_count=models.F('likes_count') + 1
+                ^^^^^^
+NameError: name 'models' is not defined
+INFO 2025-08-26 12:28:42,428 runserver 5316 26988 [32mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 302 [0.04, 127.0.0.1:54189][0m
+INFO 2025-08-26 12:28:42,471 runserver 5316 26988 [mHTTP GET /feed/ 200 [0.03, 127.0.0.1:54189][0m
+INFO 2025-08-26 12:30:07,731 autoreload 5316 26620 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 12:30:09,331 autoreload 13384 34224 Watching for file changes with StatReloader
+INFO 2025-08-26 12:30:09,527 server 13384 27724 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:30:09,528 server 13384 27724 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:30:09,529 server 13384 27724 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 12:30:36,172 runserver 13384 27724 [mHTTP GET /feed/ 200 [0.22, 127.0.0.1:57166][0m
+ERROR 2025-08-26 12:30:39,035 web_views 13384 240 Error toggling like: name 'uuid' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 507, in toggle_like_view
+    defaults={'id': uuid.uuid4()}
+                    ^^^^
+NameError: name 'uuid' is not defined. Did you forget to import 'uuid'?
+WARNING 2025-08-26 12:30:39,043 log 13384 32500 Bad Request: /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/
+WARNING 2025-08-26 12:30:39,049 runserver 13384 27724 [31;1mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 400 [0.04, 127.0.0.1:57166][0m
+ERROR 2025-08-26 12:31:44,004 web_views 13384 31592 Error toggling like: name 'uuid' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 507, in toggle_like_view
+    defaults={'id': uuid.uuid4()}
+                    ^^^^
+NameError: name 'uuid' is not defined. Did you forget to import 'uuid'?
+WARNING 2025-08-26 12:31:44,008 log 13384 32500 Bad Request: /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/
+WARNING 2025-08-26 12:31:44,009 runserver 13384 27724 [31;1mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 400 [0.03, 127.0.0.1:61133][0m
+INFO 2025-08-26 12:34:22,241 autoreload 13384 34224 C:\Users\Acer\Desktop\bim_social\backend\social\models.py changed, reloading.
+INFO 2025-08-26 12:34:23,946 autoreload 19600 2724 Watching for file changes with StatReloader
+INFO 2025-08-26 12:34:24,216 server 19600 33668 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:34:24,217 server 19600 33668 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:34:24,218 server 19600 33668 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 12:34:37,802 autoreload 19600 2724 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 12:34:39,360 autoreload 19108 33004 Watching for file changes with StatReloader
+INFO 2025-08-26 12:34:39,552 server 19108 28164 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:34:39,552 server 19108 28164 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:34:39,553 server 19108 28164 Listening on TCP address 127.0.0.1:8000
+ERROR 2025-08-26 12:35:29,347 web_views 19108 18912 Error in toggle_like_view: name 'uuid' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 525, in toggle_like_view
+    Like.objects.create(user=request.user, post=post, id=uuid.uuid4())
+                                                         ^^^^
+NameError: name 'uuid' is not defined. Did you forget to import 'uuid'?
+WARNING 2025-08-26 12:35:29,353 log 19108 34736 Bad Request: /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/
+WARNING 2025-08-26 12:35:29,354 runserver 19108 28164 [31;1mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 400 [0.04, 127.0.0.1:52438][0m
+INFO 2025-08-26 12:39:21,538 autoreload 19108 33004 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 12:39:22,861 autoreload 21356 33760 Watching for file changes with StatReloader
+INFO 2025-08-26 12:39:23,056 server 21356 26168 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:39:23,056 server 21356 26168 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:39:23,059 server 21356 26168 Listening on TCP address 127.0.0.1:8000
+ERROR 2025-08-26 12:40:08,553 web_views 21356 31532 Error in toggle_like_view: name 'Like' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 506, in toggle_like_view
+    like = Like.objects.filter(user=request.user, post=post).first()
+           ^^^^
+NameError: name 'Like' is not defined
+WARNING 2025-08-26 12:40:08,561 log 21356 13924 Bad Request: /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/
+WARNING 2025-08-26 12:40:08,563 runserver 21356 26168 [31;1mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 400 [0.04, 127.0.0.1:65425][0m
+INFO 2025-08-26 12:40:55,884 autoreload 21356 33760 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 12:40:57,483 autoreload 24856 19936 Watching for file changes with StatReloader
+INFO 2025-08-26 12:40:57,672 server 24856 16964 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:40:57,672 server 24856 16964 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 12:40:57,673 server 24856 16964 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 12:41:08,011 autoreload 15424 32536 Watching for file changes with StatReloader
+INFO 2025-08-26 12:41:08,175 server 15424 33644 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 12:41:08,177 server 15424 33644 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+CRITICAL 2025-08-26 12:41:08,178 server 15424 33644 Listen failure: Couldn't listen on 127.0.0.1:8000: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted.
+INFO 2025-08-26 14:19:52,225 runserver 24856 16964 [mHTTP GET /feed/ 200 [0.04, 127.0.0.1:53414][0m
+INFO 2025-08-26 14:19:52,249 runserver 24856 16964 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.01, 127.0.0.1:53414][0m
+INFO 2025-08-26 14:19:52,250 runserver 24856 16964 [36mHTTP GET /media/posts/images/Nitro_Wallpaper_03_3840x2400.jpg 304 [0.01, 127.0.0.1:55849][0m
+INFO 2025-08-26 14:19:52,251 runserver 24856 16964 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.01, 127.0.0.1:52421][0m
+WARNING 2025-08-26 14:19:54,205 log 24856 34184 Bad Request: /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/
+WARNING 2025-08-26 14:19:54,205 runserver 24856 16964 [31;1mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 400 [0.01, 127.0.0.1:52421][0m
+WARNING 2025-08-26 14:24:43,930 log 24856 34184 Bad Request: /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/
+WARNING 2025-08-26 14:24:43,937 runserver 24856 16964 [31;1mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 400 [0.03, 127.0.0.1:55199][0m
+WARNING 2025-08-26 14:24:48,544 log 24856 34184 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-08-26 14:24:48,545 runserver 24856 16964 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.22, 127.0.0.1:55199][0m
+INFO 2025-08-26 14:25:53,432 autoreload 15424 32536 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 14:25:53,460 autoreload 24856 19936 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 14:25:56,967 autoreload 29772 33152 Watching for file changes with StatReloader
+INFO 2025-08-26 14:25:56,967 autoreload 15412 26848 Watching for file changes with StatReloader
+INFO 2025-08-26 14:25:57,254 server 15412 29536 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 14:25:57,254 server 29772 33348 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 14:25:57,254 server 15412 29536 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 14:25:57,255 server 29772 33348 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 14:25:57,256 server 29772 33348 Listening on TCP address 127.0.0.1:8000
+CRITICAL 2025-08-26 14:25:57,256 server 15412 29536 Listen failure: Couldn't listen on 127.0.0.1:8000: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted.
+INFO 2025-08-26 14:26:20,281 runserver 29772 33348 [mHTTP GET /messages/ 200 [0.21, 127.0.0.1:64657][0m
+WARNING 2025-08-26 14:26:20,377 log 29772 24296 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-08-26 14:26:20,379 runserver 29772 33348 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:64657][0m
+INFO 2025-08-26 14:26:27,290 runserver 29772 33348 [mHTTP GET /feed/ 200 [0.15, 127.0.0.1:64657][0m
+INFO 2025-08-26 14:26:29,967 web_views 29772 27236 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+ERROR 2025-08-26 14:26:29,968 web_views 29772 27236 Error in toggle_like_view: name 'Like' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Acer\Desktop\bim_social\backend\web_views.py", line 517, in toggle_like_view
+    like = Like.objects.filter(user=request.user, post=post).first()
+           ^^^^
+NameError: name 'Like' is not defined
+WARNING 2025-08-26 14:26:30,001 log 29772 24296 Bad Request: /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/
+WARNING 2025-08-26 14:26:30,017 runserver 29772 33348 [31;1mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 400 [0.07, 127.0.0.1:64657][0m
+INFO 2025-08-26 14:27:19,328 autoreload 15412 26848 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 14:27:19,342 autoreload 29772 33152 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 14:27:20,793 autoreload 19240 32404 Watching for file changes with StatReloader
+INFO 2025-08-26 14:27:20,809 autoreload 33096 14048 Watching for file changes with StatReloader
+INFO 2025-08-26 14:27:21,101 server 19240 24800 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 14:27:21,102 server 19240 24800 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 14:27:21,104 server 19240 24800 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 14:27:21,108 server 33096 31984 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 14:27:21,109 server 33096 31984 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+CRITICAL 2025-08-26 14:27:21,110 server 33096 31984 Listen failure: Couldn't listen on 127.0.0.1:8000: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted.
+INFO 2025-08-26 14:27:33,768 web_views 19240 13060 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:27:33,783 web_views 19240 13060 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: True
+INFO 2025-08-26 14:27:33,795 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.05, 127.0.0.1:53024][0m
+INFO 2025-08-26 14:27:35,837 web_views 19240 4780 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:27:35,849 web_views 19240 4780 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: False
+INFO 2025-08-26 14:27:35,856 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.03, 127.0.0.1:53024][0m
+INFO 2025-08-26 14:27:36,549 web_views 19240 31808 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:27:36,572 web_views 19240 31808 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: True
+INFO 2025-08-26 14:27:36,584 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.06, 127.0.0.1:53024][0m
+INFO 2025-08-26 14:27:37,365 web_views 19240 33292 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:27:37,388 web_views 19240 33292 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: False
+INFO 2025-08-26 14:27:37,413 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.08, 127.0.0.1:53024][0m
+INFO 2025-08-26 14:27:38,166 web_views 19240 13252 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:27:38,199 web_views 19240 13252 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: True
+INFO 2025-08-26 14:27:38,219 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.07, 127.0.0.1:53024][0m
+INFO 2025-08-26 14:27:38,922 web_views 19240 34428 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:27:38,946 web_views 19240 34428 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: False
+INFO 2025-08-26 14:27:38,970 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.08, 127.0.0.1:53024][0m
+INFO 2025-08-26 14:27:46,043 runserver 19240 24800 [mHTTP GET /feed/ 200 [0.15, 127.0.0.1:53039][0m
+INFO 2025-08-26 14:27:46,112 runserver 19240 24800 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.04, 127.0.0.1:53039][0m
+INFO 2025-08-26 14:27:46,120 runserver 19240 24800 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.05, 127.0.0.1:53040][0m
+INFO 2025-08-26 14:27:46,125 runserver 19240 24800 [36mHTTP GET /media/posts/images/Nitro_Wallpaper_03_3840x2400.jpg 304 [0.03, 127.0.0.1:53041][0m
+INFO 2025-08-26 14:27:48,342 web_views 19240 17792 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 3
+INFO 2025-08-26 14:27:48,368 web_views 19240 17792 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: True
+INFO 2025-08-26 14:27:48,389 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.08, 127.0.0.1:53041][0m
+INFO 2025-08-26 14:27:52,301 runserver 19240 24800 [mHTTP GET /feed/ 200 [0.08, 127.0.0.1:53024][0m
+INFO 2025-08-26 14:30:09,523 web_views 19240 31236 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:30:09,532 web_views 19240 31236 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 3, is_liked: True
+INFO 2025-08-26 14:30:09,540 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.03, 127.0.0.1:64557][0m
+INFO 2025-08-26 14:30:12,112 runserver 19240 24800 [mHTTP GET /feed/ 200 [0.05, 127.0.0.1:64557][0m
+INFO 2025-08-26 14:30:17,633 runserver 19240 24800 [mHTTP GET /feed/ 200 [0.05, 127.0.0.1:58263][0m
+INFO 2025-08-26 14:30:20,210 web_views 19240 31604 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 3
+INFO 2025-08-26 14:30:20,235 web_views 19240 31604 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: False
+INFO 2025-08-26 14:30:20,266 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.07, 127.0.0.1:58263][0m
+INFO 2025-08-26 14:30:23,506 web_views 19240 30680 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:30:23,569 web_views 19240 30680 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: False
+INFO 2025-08-26 14:30:23,585 runserver 19240 24800 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.10, 127.0.0.1:64557][0m
+INFO 2025-08-26 14:30:56,090 runserver 19240 24800 [mHTTP GET /feed/ 200 [0.04, 127.0.0.1:64557][0m
+INFO 2025-08-26 14:31:04,858 runserver 19240 24800 [mHTTP GET /feed/ 200 [0.06, 127.0.0.1:58263][0m
+INFO 2025-08-26 14:31:37,823 autoreload 19240 32404 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 14:31:39,182 autoreload 24348 11776 Watching for file changes with StatReloader
+INFO 2025-08-26 14:31:39,364 server 24348 21496 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 14:31:39,365 server 24348 21496 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 14:31:39,366 server 24348 21496 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 14:32:20,103 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.09, 127.0.0.1:50911][0m
+INFO 2025-08-26 14:32:21,239 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.04, 127.0.0.1:50911][0m
+INFO 2025-08-26 14:33:19,007 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.06, 127.0.0.1:53406][0m
+INFO 2025-08-26 14:33:22,218 web_views 24348 34140 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 3
+INFO 2025-08-26 14:33:22,248 web_views 24348 34140 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: True
+INFO 2025-08-26 14:33:22,263 runserver 24348 21496 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.06, 127.0.0.1:53406][0m
+INFO 2025-08-26 14:33:23,638 web_views 24348 34812 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 3
+INFO 2025-08-26 14:33:23,661 web_views 24348 34812 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: False
+INFO 2025-08-26 14:33:23,674 runserver 24348 21496 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.06, 127.0.0.1:53406][0m
+INFO 2025-08-26 14:33:24,757 web_views 24348 28324 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 3
+INFO 2025-08-26 14:33:24,771 web_views 24348 28324 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: True
+INFO 2025-08-26 14:33:24,780 runserver 24348 21496 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.04, 127.0.0.1:53406][0m
+INFO 2025-08-26 14:33:25,557 web_views 24348 34148 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 3
+INFO 2025-08-26 14:33:25,570 web_views 24348 34148 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: False
+INFO 2025-08-26 14:33:25,579 runserver 24348 21496 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.04, 127.0.0.1:53406][0m
+INFO 2025-08-26 14:33:29,372 web_views 24348 27216 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:33:29,387 web_views 24348 27216 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 2, is_liked: True
+INFO 2025-08-26 14:33:29,398 runserver 24348 21496 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.04, 127.0.0.1:55410][0m
+INFO 2025-08-26 14:33:29,973 web_views 24348 31828 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:33:29,996 web_views 24348 31828 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: False
+INFO 2025-08-26 14:33:30,008 runserver 24348 21496 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.07, 127.0.0.1:55410][0m
+INFO 2025-08-26 14:34:17,434 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.04, 127.0.0.1:55410][0m
+INFO 2025-08-26 14:34:22,642 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.06, 127.0.0.1:53406][0m
+INFO 2025-08-26 14:37:04,994 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.03, 127.0.0.1:62175][0m
+INFO 2025-08-26 14:37:06,719 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.03, 127.0.0.1:62175][0m
+INFO 2025-08-26 14:37:11,237 runserver 24348 21496 [mHTTP GET /feed/ 200 [0.07, 127.0.0.1:53872][0m
+INFO 2025-08-26 14:38:25,477 autoreload 24348 11776 C:\Users\Acer\Desktop\bim_social\backend\web_views.py changed, reloading.
+INFO 2025-08-26 14:38:27,196 autoreload 18408 31236 Watching for file changes with StatReloader
+INFO 2025-08-26 14:38:27,386 server 18408 22892 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 14:38:27,387 server 18408 22892 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 14:38:27,388 server 18408 22892 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 14:39:15,556 runserver 18408 22892 [mHTTP GET /feed/ 200 [0.09, 127.0.0.1:54038][0m
+INFO 2025-08-26 14:39:16,699 runserver 18408 22892 [mHTTP GET /feed/ 200 [0.05, 127.0.0.1:54038][0m
+INFO 2025-08-26 14:39:21,577 runserver 18408 22892 [mHTTP GET /feed/ 200 [0.07, 127.0.0.1:57784][0m
+INFO 2025-08-26 14:39:22,636 runserver 18408 22892 [mHTTP GET /feed/ 200 [0.06, 127.0.0.1:57784][0m
+INFO 2025-08-26 14:39:29,247 web_views 18408 34636 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:39:29,270 web_views 18408 34636 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: True
+INFO 2025-08-26 14:39:29,281 runserver 18408 22892 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.06, 127.0.0.1:57784][0m
+INFO 2025-08-26 14:39:30,078 web_views 18408 33652 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:39:30,099 web_views 18408 33652 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 0, is_liked: False
+INFO 2025-08-26 14:39:30,127 runserver 18408 22892 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.07, 127.0.0.1:57784][0m
+INFO 2025-08-26 14:39:30,780 web_views 18408 33360 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:39:30,794 web_views 18408 33360 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: True
+INFO 2025-08-26 14:39:30,804 runserver 18408 22892 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.03, 127.0.0.1:57784][0m
+INFO 2025-08-26 14:39:31,760 web_views 18408 31716 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-26 14:39:31,779 web_views 18408 31716 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 0, is_liked: False
+INFO 2025-08-26 14:39:31,792 runserver 18408 22892 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.04, 127.0.0.1:57784][0m
+INFO 2025-08-26 14:48:46,235 autoreload 16148 27936 Watching for file changes with StatReloader
+INFO 2025-08-26 14:48:46,342 server 16148 20772 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-26 14:48:46,342 server 16148 20772 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-26 14:48:46,344 server 16148 20772 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-26 14:48:52,551 runserver 16148 20772 [mHTTP GET /messages/ 200 [0.04, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:48:55,144 runserver 16148 20772 [32mHTTP POST /start-conversation/shyam/ 302 [0.01, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:48:55,169 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:48:57,217 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:48:59,208 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:00,475 runserver 16148 20772 [32mHTTP POST /send-message/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 302 [0.04, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:00,505 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.03, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:02,544 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:04,548 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:06,687 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:07,383 runserver 16148 20772 [mHTTP GET /messages/ 200 [0.02, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:08,699 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:09,849 runserver 16148 20772 [32mHTTP POST /start-conversation/ramm/ 302 [0.02, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:09,887 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.04, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:10,685 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:11,934 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:12,689 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:13,924 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:14,689 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:15,934 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:16,425 runserver 16148 20772 [32mHTTP POST /send-message/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 302 [0.03, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:16,447 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.02, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:16,695 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:18,545 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:18,690 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:20,549 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:55419][0m
+INFO 2025-08-26 14:49:20,688 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.02, 127.0.0.1:64812][0m
+INFO 2025-08-26 14:49:22,499 runserver 16148 20772 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:64812][0m
+INFO 2025-08-27 09:56:52,942 autoreload 28568 22080 Watching for file changes with StatReloader
+INFO 2025-08-27 09:56:53,264 server 28568 19040 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-27 09:56:53,265 server 28568 19040 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-27 09:56:53,266 server 28568 19040 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-27 09:57:00,604 runserver 28568 19040 [mHTTP GET / 200 [0.14, 127.0.0.1:53887][0m
+WARNING 2025-08-27 09:57:02,045 log 28568 30552 Not Found: /favicon.ico
+WARNING 2025-08-27 09:57:02,047 runserver 28568 19040 [33mHTTP GET /favicon.ico 404 [0.24, 127.0.0.1:53887][0m
+INFO 2025-08-27 09:57:10,068 runserver 28568 19040 [mHTTP GET /login/ 200 [0.06, 127.0.0.1:53887][0m
+INFO 2025-08-27 09:58:32,176 runserver 28568 19040 [mHTTP GET /register/ 200 [0.09, 127.0.0.1:65449][0m
+INFO 2025-08-27 09:58:34,451 runserver 28568 19040 [mHTTP GET /register/ 200 [0.02, 127.0.0.1:65449][0m
+INFO 2025-08-27 10:03:14,338 runserver 28568 19040 [mHTTP GET /login/ 200 [0.01, 127.0.0.1:53392][0m
+INFO 2025-08-27 10:03:15,503 runserver 28568 19040 [mHTTP GET /about/ 200 [0.07, 127.0.0.1:53392][0m
+INFO 2025-08-27 10:03:59,693 runserver 28568 19040 [mHTTP GET /login/ 200 [0.02, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:04:09,603 runserver 28568 19040 [32mHTTP POST /login/ 302 [0.77, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:04:09,650 runserver 28568 19040 [mHTTP GET / 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:04:09,711 runserver 28568 19040 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.01, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:04:43,018 runserver 28568 19040 [mHTTP GET / 200 [0.03, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:04:51,044 runserver 28568 19040 [mHTTP GET /feed/ 200 [0.22, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:04:51,115 runserver 28568 19040 [36mHTTP GET /media/posts/images/Nitro_Wallpaper_03_3840x2400.jpg 304 [0.03, 127.0.0.1:51126][0m
+INFO 2025-08-27 10:04:51,117 runserver 28568 19040 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:05:13,308 runserver 28568 19040 [mHTTP GET /explore/ 200 [0.12, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:10,687 runserver 28568 19040 [mHTTP GET /notifications/ 200 [0.11, 127.0.0.1:63035][0m
+WARNING 2025-08-27 10:06:10,780 log 28568 30552 Not Found: /api/notifications/mark-read/
+WARNING 2025-08-27 10:06:10,781 runserver 28568 19040 [33mHTTP POST /api/notifications/mark-read/ 404 [0.06, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:18,942 runserver 28568 19040 [32mHTTP POST /follow/shyam/ 302 [0.08, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:19,035 runserver 28568 19040 [mHTTP GET /notifications/ 200 [0.09, 127.0.0.1:63035][0m
+WARNING 2025-08-27 10:06:19,118 log 28568 30552 Not Found: /api/notifications/mark-read/
+WARNING 2025-08-27 10:06:19,119 runserver 28568 19040 [33mHTTP POST /api/notifications/mark-read/ 404 [0.03, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:22,701 runserver 28568 19040 [32mHTTP POST /follow/shyam/ 302 [0.06, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:22,785 runserver 28568 19040 [mHTTP GET /notifications/ 200 [0.08, 127.0.0.1:63035][0m
+WARNING 2025-08-27 10:06:22,940 log 28568 30552 Not Found: /api/notifications/mark-read/
+WARNING 2025-08-27 10:06:22,942 runserver 28568 19040 [33mHTTP POST /api/notifications/mark-read/ 404 [0.08, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:55,285 runserver 28568 19040 [mHTTP GET /messages/ 200 [0.07, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:57,875 runserver 28568 19040 [32mHTTP POST /start-conversation/shyam/ 302 [0.03, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:06:58,001 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.12, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:00,093 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:02,080 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:04,088 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:06,074 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:08,094 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:10,084 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:12,090 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:14,082 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:16,079 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:18,072 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:20,085 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:22,076 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:24,073 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:26,097 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:28,087 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:30,071 runserver 28568 19040 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:07:30,610 runserver 28568 19040 [mHTTP GET /messages/ 200 [0.05, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:08:15,557 runserver 28568 19040 [mHTTP GET /profile/ramm/ 200 [0.13, 127.0.0.1:63035][0m
+INFO 2025-08-27 10:09:00,626 runserver 28568 19040 [mHTTP GET /about/ 200 [0.01, 127.0.0.1:63035][0m
+INFO 2025-08-27 15:13:17,662 autoreload 28336 41740 Watching for file changes with StatReloader
+INFO 2025-08-27 15:13:17,860 server 28336 14428 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-27 15:13:17,860 server 28336 14428 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-27 15:13:17,862 server 28336 14428 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-27 15:13:28,893 runserver 28336 14428 [mHTTP GET / 200 [0.03, 127.0.0.1:51922][0m
+WARNING 2025-08-27 15:13:29,032 log 28336 24600 Not Found: /favicon.ico
+WARNING 2025-08-27 15:13:29,032 runserver 28336 14428 [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:51922][0m
+INFO 2025-08-27 15:13:31,164 runserver 28336 14428 [mHTTP GET /login/ 200 [0.01, 127.0.0.1:51922][0m
+INFO 2025-08-27 15:13:39,836 runserver 28336 14428 [32mHTTP POST /login/ 302 [0.80, 127.0.0.1:51922][0m
+INFO 2025-08-27 15:13:39,863 runserver 28336 14428 [mHTTP GET / 200 [0.02, 127.0.0.1:51922][0m
+INFO 2025-08-27 15:13:39,901 runserver 28336 14428 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.01, 127.0.0.1:51922][0m
+INFO 2025-08-27 15:15:25,201 runserver 28336 14428 [mHTTP GET /feed/ 200 [0.09, 127.0.0.1:56336][0m
+INFO 2025-08-27 15:15:25,251 runserver 28336 14428 [36mHTTP GET /media/posts/images/Nitro_Wallpaper_03_3840x2400.jpg 304 [0.01, 127.0.0.1:61066][0m
+INFO 2025-08-27 15:15:25,268 runserver 28336 14428 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.03, 127.0.0.1:56336][0m
+INFO 2025-08-27 15:15:29,442 web_views 28336 4012 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-27 15:15:29,470 web_views 28336 4012 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: True
+INFO 2025-08-27 15:15:29,483 runserver 28336 14428 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.06, 127.0.0.1:56336][0m
+INFO 2025-08-27 15:15:31,772 web_views 28336 36752 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-27 15:15:31,791 web_views 28336 36752 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 0, is_liked: False
+INFO 2025-08-27 15:15:31,803 runserver 28336 14428 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.06, 127.0.0.1:56336][0m
+INFO 2025-08-27 15:15:32,441 web_views 28336 24420 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-27 15:15:32,465 web_views 28336 24420 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: True
+INFO 2025-08-27 15:15:32,476 runserver 28336 14428 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.05, 127.0.0.1:56336][0m
+INFO 2025-08-27 15:15:34,062 runserver 28336 14428 [mHTTP GET /feed/ 200 [0.03, 127.0.0.1:56336][0m
+INFO 2025-08-27 15:15:36,005 web_views 28336 26552 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-27 15:15:36,024 web_views 28336 26552 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 0, is_liked: False
+INFO 2025-08-27 15:15:36,033 runserver 28336 14428 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.05, 127.0.0.1:56336][0m
+INFO 2025-08-27 15:15:41,829 runserver 28336 14428 [mHTTP GET /feed/ 200 [0.05, 127.0.0.1:56586][0m
+INFO 2025-08-27 15:24:01,959 runserver 28336 14428 [mHTTP GET /explore/ 200 [0.04, 127.0.0.1:60794][0m
+INFO 2025-08-27 15:24:08,241 runserver 28336 14428 [mHTTP GET /notifications/ 200 [0.04, 127.0.0.1:60794][0m
+WARNING 2025-08-27 15:24:08,308 log 28336 24600 Not Found: /api/notifications/mark-read/
+WARNING 2025-08-27 15:24:08,310 runserver 28336 14428 [33mHTTP POST /api/notifications/mark-read/ 404 [0.03, 127.0.0.1:60794][0m
+INFO 2025-08-27 15:24:15,518 runserver 28336 14428 [mHTTP GET /messages/ 200 [0.05, 127.0.0.1:60794][0m
+INFO 2025-08-27 15:25:01,516 runserver 28336 14428 [mHTTP GET /profile/ramm/ 200 [0.04, 127.0.0.1:60794][0m
+INFO 2025-08-28 16:30:15,205 autoreload 22392 1844 Watching for file changes with StatReloader
+INFO 2025-08-28 16:30:15,454 server 22392 19272 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-08-28 16:30:15,455 server 22392 19272 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-08-28 16:30:15,456 server 22392 19272 Listening on TCP address 127.0.0.1:8000
+INFO 2025-08-28 16:30:38,021 runserver 22392 19272 [mHTTP GET / 200 [0.06, 127.0.0.1:55046][0m
+WARNING 2025-08-28 16:30:38,592 log 22392 37656 Not Found: /favicon.ico
+WARNING 2025-08-28 16:30:38,594 runserver 22392 19272 [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:55046][0m
+INFO 2025-08-28 16:30:49,818 runserver 22392 19272 [mHTTP GET / 200 [0.01, 127.0.0.1:51357][0m
+WARNING 2025-08-28 16:30:49,921 log 22392 37656 Not Found: /favicon.ico
+WARNING 2025-08-28 16:30:49,923 runserver 22392 19272 [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:00,986 runserver 22392 19272 [mHTTP GET /login/ 200 [0.02, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:17,664 runserver 22392 19272 [32mHTTP POST /login/ 302 [0.74, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:17,700 runserver 22392 19272 [mHTTP GET / 200 [0.03, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:17,726 runserver 22392 19272 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.01, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:25,621 runserver 22392 19272 [mHTTP GET /profile/shyam/ 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:28,841 runserver 22392 19272 [mHTTP GET /messages/ 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:28,871 runserver 22392 19272 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.02, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:30,360 runserver 22392 19272 [32mHTTP POST /start-conversation/ramm/ 302 [0.02, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:30,406 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:32,473 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:34,473 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:36,476 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:38,632 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:40,627 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:42,616 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:43,182 runserver 22392 19272 [mHTTP GET /login/ 200 [0.01, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:31:44,657 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:45,876 runserver 22392 19272 [mHTTP GET /about/ 200 [0.01, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:31:46,634 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:48,630 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:50,631 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:52,631 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:54,615 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:56,626 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:31:58,634 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:00,624 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:02,634 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:04,639 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:06,631 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:08,626 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:10,627 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:12,631 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:14,658 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:16,634 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:18,626 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:20,636 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:22,614 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:24,632 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:28,019 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.76, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:28,622 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:30,625 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:32,656 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:34,632 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:36,657 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:41,904 runserver 22392 19272 [mHTTP GET /register/ 200 [0.01, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:32:53,630 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:32:55,366 runserver 22392 19272 [mHTTP GET /login/ 200 [0.02, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:33:05,692 runserver 22392 19272 [32mHTTP POST /login/ 302 [0.80, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:33:05,730 runserver 22392 19272 [mHTTP GET / 200 [0.03, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:33:05,770 runserver 22392 19272 [36mHTTP GET /media/profile_images/Nitro_Wallpaper_02_3840x2400.jpg 304 [0.01, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:33:28,399 runserver 22392 19272 [mHTTP GET /feed/ 200 [0.10, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:33:28,450 runserver 22392 19272 [36mHTTP GET /media/posts/images/Nitro_Wallpaper_03_3840x2400.jpg 304 [0.01, 127.0.0.1:59223][0m
+INFO 2025-08-28 16:33:28,457 runserver 22392 19272 [36mHTTP GET /media/profile_images/Screenshot_2025-08-23_193505_UFwNhe9.png 304 [0.02, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:33:38,401 web_views 22392 33328 Processing like for post 2d851021-4591-4ba3-92e8-a9caba74ae4a by user 1
+INFO 2025-08-28 16:33:38,419 web_views 22392 33328 Post 2d851021-4591-4ba3-92e8-a9caba74ae4a like status updated. New count: 1, is_liked: True
+INFO 2025-08-28 16:33:38,435 runserver 22392 19272 [mHTTP POST /like/2d851021-4591-4ba3-92e8-a9caba74ae4a/ 200 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:33:43,915 runserver 22392 19272 [mHTTP GET /notifications/ 200 [0.04, 127.0.0.1:57307][0m
+WARNING 2025-08-28 16:33:43,987 log 22392 37656 Not Found: /api/notifications/mark-read/
+WARNING 2025-08-28 16:33:43,988 runserver 22392 19272 [33mHTTP POST /api/notifications/mark-read/ 404 [0.03, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:33:53,626 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:33:54,082 runserver 22392 19272 [mHTTP GET /profile/ramm/ 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:33:58,538 runserver 22392 19272 [mHTTP GET /settings/ 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:02,606 runserver 22392 19272 [32mHTTP POST /settings/ 302 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:02,661 runserver 22392 19272 [mHTTP GET /profile/ramm/ 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:12,765 runserver 22392 19272 [mHTTP GET /settings/ 200 [0.03, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:29,101 runserver 22392 19272 [32mHTTP POST /settings/ 302 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:29,154 runserver 22392 19272 [mHTTP GET /profile/ramm/ 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:29,295 runserver 22392 19272 [mHTTP GET /media/profile_images/Picture1.png 200 [0.12, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:36,347 runserver 22392 19272 [mHTTP GET /messages/ 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:36,380 runserver 22392 19272 [36mHTTP GET /media/profile_images/Picture1.png 304 [0.01, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:44,325 runserver 22392 19272 [32mHTTP POST /start-conversation/shyam/ 302 [0.03, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:44,373 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:44,407 runserver 22392 19272 [36mHTTP GET /media/profile_images/Picture1.png 304 [0.01, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:46,461 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:48,446 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:50,445 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:51,635 runserver 22392 19272 [32mHTTP POST /send-message/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 302 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:51,682 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:51,715 runserver 22392 19272 [36mHTTP GET /media/profile_images/Picture1.png 304 [0.01, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:53,664 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:34:53,752 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:55,567 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:34:56,473 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:34:56,635 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:34:58,469 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:34:58,681 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:00,465 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:00,629 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:02,459 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:02,619 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:04,487 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:04,628 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:06,502 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:06,628 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:08,470 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:08,623 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:10,249 runserver 22392 19272 [32mHTTP POST /send-message/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 302 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:10,294 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/ 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:10,647 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:12,360 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:12,627 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:13,748 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:14,636 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:15,757 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:16,659 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:17,752 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:18,622 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:19,781 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:20,664 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:21,763 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:22,658 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:23,749 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:24,642 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:25,759 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:26,649 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:27,778 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:28,641 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:30,641 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:30,679 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:32,671 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:32,678 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.09, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:34,654 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:34,665 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:36,658 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:36,687 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:38,684 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.10, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:38,690 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.10, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:40,683 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.09, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:40,685 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.10, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:42,667 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:42,669 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:44,665 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:44,671 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.09, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:46,763 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.16, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:46,772 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.18, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:48,659 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:48,671 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.09, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:50,706 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.09, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:50,709 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.09, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:52,673 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:52,710 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:54,636 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:54,676 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:56,639 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:35:56,683 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:58,656 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:35:58,660 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.07, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:00,697 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.11, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:00,706 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.12, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:02,650 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:02,694 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:04,631 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:04,669 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:06,665 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:06,669 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.06, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:08,667 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:08,670 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:10,678 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:10,681 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:12,667 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:51357][0m
+INFO 2025-08-28 16:36:12,670 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:14,623 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:16,618 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:18,626 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.03, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:20,617 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:22,623 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:24,643 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:26,646 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.04, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:40,012 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.05, 127.0.0.1:57307][0m
+INFO 2025-08-28 16:36:40,760 runserver 22392 19272 [mHTTP GET /conversation/997c0c0d-8cd0-4c07-b313-d0e740ec0be0/?ajax=1 200 [0.08, 127.0.0.1:51357][0m

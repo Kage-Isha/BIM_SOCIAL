@@ -89,11 +89,13 @@
         <!-- Action Buttons -->
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div class="d-flex align-items-center">
-                <form method="post" action="{% url 'toggle_like' post_id=post.id %}" class="d-inline">
+                <form method="post" action="{% url 'toggle_like' post_id=post.id %}" class="d-inline like-form" id="like-form-{{ post.id }}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-light btn-sm me-3">
+                    <button type="button" class="btn btn-light btn-sm me-3 like-button" 
+                            data-post-id="{{ post.id }}"
+                            data-liked="{% if post.is_liked %}true{% else %}false{% endif %}">
                         <i class="{% if post.is_liked %}fas text-danger{% else %}far{% endif %} fa-heart me-1"></i>
-                        <span class="like-count">{{ post.likes_count }}</span>
+                        <span class="like-count">{{ post.actual_likes_count|default:post.likes_count|default:0 }}</span>
                     </button>
                 </form>
                 
@@ -183,4 +185,83 @@
     </div>
 </div>
 
-<!-- All JavaScript removed - using pure Django forms -->
+<script>
+// Function to get CSRF token
+function getCSRFToken() {
+    const csrfInput = document.querySelector('[name=csrfmiddlewaretoken]');
+    return csrfInput ? csrfInput.value : '';
+}
+
+// Handle like button clicks
+document.addEventListener('click', function(e) {
+    const likeButton = e.target.closest('.like-button');
+    if (!likeButton) return;
+    
+    e.preventDefault();
+    
+    const form = likeButton.closest('form');
+    const icon = likeButton.querySelector('i');
+    const countElement = likeButton.querySelector('.like-count');
+    const isLiked = likeButton.dataset.liked === 'true';
+    
+    // Store original values for potential revert
+    const originalCount = parseInt(countElement.textContent) || 0;
+    const originalLikedState = isLiked;
+    const originalIconClass = icon.className;
+    
+    // Immediate optimistic UI update
+    const newCount = isLiked ? Math.max(0, originalCount - 1) : originalCount + 1;
+    const newLikedState = !isLiked;
+    
+    // Update UI immediately
+    countElement.textContent = newCount;
+    likeButton.dataset.liked = newLikedState.toString();
+    icon.className = newLikedState ? 'fas text-danger fa-heart me-1' : 'far fa-heart me-1';
+    likeButton.disabled = true;
+    
+    // Prepare form data
+    const formData = new FormData(form);
+    
+    // Send request
+    fetch(form.action, {
+        method: 'POST',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': getCSRFToken()
+        },
+        body: formData,
+        credentials: 'same-origin'
+    })
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(function(data) {
+        if (data.status !== 'success') {
+            throw new Error(data.message || 'Failed to update like');
+        }
+        // Confirm with server data (should match our optimistic update)
+        countElement.textContent = data.likes_count;
+        likeButton.dataset.liked = data.is_liked.toString();
+        icon.className = data.is_liked ? 'fas text-danger fa-heart me-1' : 'far fa-heart me-1';
+        
+        console.log('Like updated successfully:', data);
+    })
+    .catch(function(error) {
+        console.error('Error updating like:', error);
+        
+        // Revert to original state on error
+        countElement.textContent = originalCount;
+        likeButton.dataset.liked = originalLikedState.toString();
+        icon.className = originalIconClass;
+        
+        // Show error message
+        alert('Failed to update like. Please try again.');
+    })
+    .finally(function() {
+        likeButton.disabled = false;
+    });
+});
+</script>

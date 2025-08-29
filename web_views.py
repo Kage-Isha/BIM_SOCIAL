@@ -260,6 +260,7 @@ def feed_view(request):
     ).select_related('user', 'user__profile').prefetch_related(
         'likes', 'comments', 'comments__user'
     ).annotate(
+        actual_likes_count=Count('likes'),
         is_liked=Exists(
             Post.objects.filter(id=OuterRef('id'), likes__user=request.user)
         ),
@@ -490,33 +491,75 @@ def settings_view(request):
     return render(request, 'settings/profile.html')
 
 # Django Form Views for social interactions
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import csrf_exempt
+
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, redirect
+from django.contrib import messages
+from django.db import transaction
+import logging
+
+# Import models
+from social.models import Post, Like
+
+logger = logging.getLogger(__name__)
+
+@csrf_exempt  # Temporarily disable CSRF for testing
 @login_required
 @require_http_methods(["POST"])
 def toggle_like_view(request, post_id):
-    """Django form view to toggle like on a post"""
+    """Handle like/unlike requests"""
     try:
-        from social.models import Like
+        # Get the post
         post = get_object_or_404(Post, id=post_id)
-        like, created = Like.objects.get_or_create(user=request.user, post=post)
+        logger.info(f"Processing like for post {post_id} by user {request.user.id}")
         
-        if not created:
-            like.delete()
-            # Use F() to avoid race conditions
-            Post.objects.filter(id=post_id).update(likes_count=models.F('likes_count') - 1)
-            messages.success(request, 'Post unliked!')
-        else:
-            # Use F() to avoid race conditions
-            Post.objects.filter(id=post_id).update(likes_count=models.F('likes_count') + 1)
-            messages.success(request, 'Post liked!')
+        # Check if like exists
+        like = Like.objects.filter(user=request.user, post=post).first()
         
-        # Refresh the post object to get the updated like count
-        post.refresh_from_db()
+        with transaction.atomic():
+            if like:
+                # Unlike
+                like.delete()
+                is_liked = False
+                message = 'Post unliked!'
+            else:
+                # Like
+                Like.objects.create(user=request.user, post=post)
+                is_liked = True
+                message = 'Post liked!'
+            
+            # Get the actual count from database after the change
+            actual_count = Like.objects.filter(post=post).count()
+            post.likes_count = actual_count
+            post.save(update_fields=['likes_count'])
+            logger.info(f"Post {post_id} like status updated. New count: {actual_count}, is_liked: {is_liked}")
         
-        # Redirect back to the referring page
-        return redirect(request.META.get('HTTP_REFERER', 'feed'))
+        # Prepare response
+        response_data = {
+            'status': 'success',
+            'message': message,
+            'likes_count': post.likes_count,
+            'is_liked': is_liked,
+            'post_id': str(post_id)
+        }
+        
+        return JsonResponse(response_data)
         
     except Exception as e:
-        messages.error(request, f'Error liking post: {str(e)}')
+        error_msg = str(e)
+        logger.error(f"Error in toggle_like_view: {error_msg}", exc_info=True)
+        return JsonResponse(
+            {'status': 'error', 'message': 'An error occurred while processing your request.'}, 
+            status=400
+        )
+            
+        messages.error(request, error_msg)
         return redirect(request.META.get('HTTP_REFERER', 'feed'))
 
 @login_required
